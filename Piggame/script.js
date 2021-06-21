@@ -12,12 +12,17 @@ const current0El = document.getElementById('current--0');
 const current1El = document.getElementById('current--1');
 
 
+
+
 const diceEl = document.querySelector('.dice');
 
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 const winbanner = document.querySelector('.winner-banner');
+
+const winner0 = document.querySelector('.mithra-pic');
+const winner1 = document.querySelector('.malla-pic');
 
 
 let scores, currentScore, activePlayer, playing;
@@ -30,6 +35,12 @@ const init = function(){
 score0El.textContent = 0; //give initial value to 0
 score1El.textContent = 0;
 diceEl.classList.add('hidden');
+winner0.classList.add('hidden');
+winner1.classList.add('hidden');
+winbanner.classList.add('hidden');
+
+
+
 
 scores = [0,0];
 currentScore = 0;//cannot be inside the function below
@@ -109,7 +120,7 @@ btnHold.addEventListener('click',function(){
     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
  
     //2. Check if player's score is >=100
-    if (scores[activePlayer] >= 6) {
+    if (scores[activePlayer] >= 50) {
         // Finish the game
         playing = false;
         diceEl.classList.add('hidden');
@@ -123,13 +134,18 @@ btnHold.addEventListener('click',function(){
         if(activePlayer == 0){
             console.log([activePlayer]);
                         
-            prompt('Mithra is winner');
-            winbanner.textContent ='Winner is Mithra';
-            winbanner.classlist.remove('hidden');
+            //prompt('Mithra is winner');
+            winbanner.classList.remove('hidden');
+            winner0.classList.remove('hidden');
+            winner0.textContent = 'Winner is Mithra'
+
         }else{
-            //winbanner.textContent ='Winner is Malla';
-            //winbanner.classlist.remove('hidden');
-            prompt('Malla is winner');
+          
+            
+            //prompt('Malla is winner');
+            winner1.classList.remove('hidden');
+            winbanner.classList.remove('hidden');
+
         }
 
 

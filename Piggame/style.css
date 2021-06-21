@@ -173,9 +173,8 @@ main {
 .winner-banner {
   position: absolute;
   left: 31%;
-  transform: translateX(-44%);
+  top: 33%;
   color: #444;
-  background: none;
   border: none;
   font-family: inherit;
   font-size: 1.8rem;
@@ -185,7 +184,11 @@ main {
   transition: all 0.2s;
   width: 40%;
   height: 20%;
-  background: red !important;
-  z-index: tra;
-  transform: translateY(153%);
+}
+
+.mithra-pic,
+.malla-pic {
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 50%;
 }
